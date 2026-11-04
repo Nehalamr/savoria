@@ -1,0 +1,101 @@
+.menu-hero {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(216,178,122,.35), transparent 45%),
+    var(--cream);
+  padding: 3.5rem 0 3rem;
+}
+
+.eyebrow {
+  color: var(--wine);
+  letter-spacing: 3px;
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.menu-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #2a1a1a;
+  margin-bottom: .6rem;
+}
+
+.menu-text { color: #6b5b5b; margin-bottom: 1.5rem; }
+
+/* البحث */
+.search-box {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 50px;
+  padding: .3rem;
+  box-shadow: 0 10px 30px rgba(90,16,32,.12);
+}
+.search-box input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  padding: .5rem 1.1rem;
+}
+.search-box button {
+  border: 0;
+  border-radius: 50px;
+  background: var(--wine);
+  color: #fff;
+  padding: .5rem 1.4rem;
+  transition: background .25s;
+}
+.search-box button:hover { background: var(--wine-dark); }
+
+/* أزرار الأنواع */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  margin-bottom: 2.5rem;
+}
+.cat-btn {
+  border: 1px solid var(--gold);
+  background: #fff;
+  color: var(--wine);
+  border-radius: 50px;
+  padding: .45rem 1.3rem;
+  font-size: .85rem;
+  transition: all .25s;
+}
+.cat-btn:hover { background: #fbf5ec; }
+.cat-btn.active {
+  background: var(--wine);
+  border-color: var(--wine);
+  color: #fff;
+}
+
+/* الحالات */
+.state { text-align: center; color: #6b5b5b; padding: 2rem 0; }
+
+/* الكروت */
+.dish-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.07);
+  height: 100%;
+  transition: transform .25s, box-shadow .25s;
+}
+.dish-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(90,16,32,.18);
+}
+.dish-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+.dish-body { padding: .9rem 1rem 1.1rem; }
+.dish-body h6 {
+  font-family: 'Playfair Display', serif;
+  color: #2a1a1a;
+  margin-bottom: .2rem;
+}
+.dish-body small { color: var(--gold); }

@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --wine: #5a1020;
+  --wine-dark: #3f0a16;
+  --gold: #d8b27a;
+  --cream: #fbf5ec;
+}
+
+body {
+  background: var(--cream);
+  font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, .brand-font {
+  font-family: 'Playfair Display', serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+.dish-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;     
+  object-position: center;
+}
+.dish-card img,
+.hero-img {
+  filter: saturate(1.1) contrast(1.05) sepia(0.1);
+}
+.dish-card {
+  position: relative;
+}
+.dish-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(63,10,22,.25), transparent 50%);
+  pointer-events: none;
+}

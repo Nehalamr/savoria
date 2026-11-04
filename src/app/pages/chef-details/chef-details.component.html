@@ -1,0 +1,31 @@
+<section class="details-page">
+  <div class="container py-5">
+
+    <!-- الشيف موجود -->
+    <div class="details-card" *ngIf="chef">
+      <div class="avatar">{{ chef.name.charAt(0) }}</div>
+      <h2 class="brand-font">{{ chef.name }}</h2>
+      <span class="chef-role">{{ chef.role }}</span>
+
+      <p class="bio">{{ chef.bio }}</p>
+
+      <ul class="info">
+        <li><strong>Specialty</strong><span>{{ chef.specialty }}</span></li>
+        <li><strong>Experience</strong><span>{{ chef.experience }} years</span></li>
+        <li><strong>City</strong><span>{{ chef.city }}</span></li>
+        <li><strong>Email</strong><span>{{ chef.email }}</span></li>
+        <li><strong>Phone</strong><span>{{ chef.phone }}</span></li>
+      </ul>
+
+      <a routerLink="/team" class="btn-back">← Back to Team</a>
+    </div>
+
+    <!-- الشيف مش موجود -->
+    <div class="details-card not-found" *ngIf="!chef">
+      <h2 class="brand-font">Chef Not Found</h2>
+      <p>We couldn't find a chef with this ID.</p>
+      <a routerLink="/team" class="btn-back">← Back to Team</a>
+    </div>
+
+  </div>
+</section>

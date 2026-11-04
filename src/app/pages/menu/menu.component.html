@@ -1,0 +1,47 @@
+<!-- HERO صغير -->
+<section class="menu-hero">
+  <div class="container text-center">
+    <p class="eyebrow">OUR MENU</p>
+    <h1 class="menu-title">Taste Something Delicious</h1>
+    <p class="menu-text">Choose a category or search for your favorite dish.</p>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search for a dish..."
+             [(ngModel)]="searchText" (keyup.enter)="search()">
+      <button type="button" (click)="search()">Search</button>
+    </div>
+  </div>
+</section>
+
+<!-- الأنواع + الأطباق -->
+<section class="container py-5">
+
+  <div class="categories">
+    <button type="button" class="cat-btn"
+            *ngFor="let c of categories"
+            [class.active]="c === selectedCategory"
+            (click)="selectCategory(c)">
+      {{ c }}
+    </button>
+  </div>
+
+  <p class="state" *ngIf="loading">Loading dishes...</p>
+
+  <p class="state" *ngIf="!loading && dishes.length === 0">
+    No dishes found. Try another search.
+  </p>
+
+  <div class="row g-4" *ngIf="!loading">
+    <div class="col-6 col-md-4 col-lg-3" *ngFor="let dish of dishes">
+      <div class="dish-card"
+           appDynamicBackground="#ffffff" hoverColor="#fbf5ec">
+        <img [src]="dish.strMealThumb" [alt]="dish.strMeal">
+        <div class="dish-body">
+          <h6>{{ dish.strMeal }}</h6>
+          <small *ngIf="dish.strCategory">{{ dish.strCategory }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

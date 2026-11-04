@@ -1,0 +1,180 @@
+.hero {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(216,178,122,.35), transparent 45%),
+    var(--cream);
+}
+
+.about {
+  padding: 3rem 0;
+}
+.eyebrow {
+  color: var(--wine);
+  letter-spacing: 3px;
+  font-size: .7rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: #2a1a1a;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  color: #6b5b5b;
+  max-width: 420px;
+  margin-bottom: 1.5rem;
+}
+
+.btn-wine {
+  background: var(--wine);
+  color: #fff;
+  border-radius: 50px;
+  padding: .6rem 1.6rem;
+}
+.btn-wine:hover { background: var(--wine-dark); color: #fff; }
+
+.hero-img {
+  max-width: 100%;
+  border-radius: 60% 40% 50% 50% / 50% 50% 40% 60%;
+  box-shadow: 0 25px 50px rgba(90,16,32,.25);
+}
+
+.section-title { color: #2a1a1a; position: relative; display: inline-block; }
+.section-title::after {
+  content: '';
+  display: inline-block;
+  width: 40px; height: 2px;
+  background: var(--gold);
+  margin-left: .8rem;
+  vertical-align: middle;
+}
+
+.dish-card {
+  position: relative;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+.dish-card:hover { transform: translateY(-5px); }
+
+.dish-card.is-fav { box-shadow: 0 0 0 2px var(--wine), 0 10px 25px rgba(90,16,32,.2); }
+
+.badge-popular {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  background: var(--gold); color: var(--wine-dark);
+  font-size: .65rem; padding: .25rem .7rem; border-radius: 50px; font-weight: 500;
+}
+
+.dish-card img { height: 150px; object-fit: cover; }
+
+.fav-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 0; background: var(--wine); color: #fff;
+  transition: background .2s, transform .2s;
+}
+.fav-btn.active { background: var(--gold); color: var(--wine-dark); transform: scale(1.1); }
+.section-title { color: #2a1a1a; display: inline-block; }
+.section-title::after {
+  content: '';
+  display: inline-block;
+  width: 40px; height: 2px;
+  background: var(--gold);
+  margin-left: .8rem;
+  vertical-align: middle;
+}
+
+.dish-card {
+  position: relative;
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+.dish-card:hover { transform: translateY(-5px); }
+.dish-card.is-fav { box-shadow: 0 0 0 2px var(--wine), 0 10px 25px rgba(90,16,32,.2); }
+
+.dish-card img { height: 150px; object-fit: cover; }
+
+.badge-popular {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  background: var(--gold); color: var(--wine-dark);
+  font-size: .65rem; padding: .25rem .7rem; border-radius: 50px; font-weight: 500;
+}
+
+.fav-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 0; background: var(--wine); color: #fff;
+  transition: background .2s, transform .2s;
+}
+.fav-btn.active { background: var(--gold); color: var(--wine-dark); transform: scale(1.1); }
+.about-img-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.about-img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 55% 45% 50% 50% / 50% 55% 45% 50%;
+  box-shadow: 0 25px 50px rgba(90, 16, 32, .25);
+}
+
+.since-badge {
+  position: absolute;
+  right: 8%;
+  bottom: -10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--wine);
+  color: var(--gold);
+  border: 3px solid var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+.since-badge strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+}
+
+.about-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: #2a1a1a;
+  margin-bottom: 1rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 1rem .5rem;
+  border-radius: 14px;
+  transition: transform .25s;
+}
+.feature:hover { transform: translateY(-4px); }
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto .6rem;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--wine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.feature h6 { color: var(--wine); }
+.feature small { color: #6b5b5b; }
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+}

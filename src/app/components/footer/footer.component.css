@@ -1,0 +1,37 @@
+.savoria-footer {
+  background: var(--wine-dark);
+  color: #fff;
+  margin-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+h6 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  line-height: 2;
+}
+
+a:hover {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.copyright {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--wine-dark);
+  font-weight: 500;
+}
+
+.btn-gold:hover {
+  background: #c9a066;
+}

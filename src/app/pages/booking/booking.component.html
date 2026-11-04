@@ -1,0 +1,123 @@
+<section class="booking-page">
+  <div class="container py-5">
+    <div class="booking-card">
+      <div class="row g-0">
+
+    
+        <div class="col-lg-5">
+          <div class="side-panel">
+            <p class="eyebrow-gold">RESERVATION</p>
+            <h2 class="side-title">Reserve Your<br>Table at Savoria</h2>
+            <p class="side-text">
+              Good food, good mood. Book in a few seconds and we'll keep your table ready.
+            </p>
+
+            <ul class="info-list">
+              <li>
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+                  </svg>
+                </span>
+                <div><strong>Opening hours</strong><small>12:00 PM - 11:00 PM</small></div>
+              </li>
+              <li>
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/>
+                  </svg>
+                </span>
+                <div><strong>Location</strong><small>Cairo, Egypt</small></div>
+              </li>
+              <li>
+                <span class="info-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 5h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 14l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 3 6a1 1 0 0 1 1-1Z"/>
+                  </svg>
+                </span>
+                <div><strong>Call us</strong><small>+20 123 456 789</small></div>
+              </li>
+            </ul>
+
+            <div class="seats-pill" [class.open]="isTableOpen">
+              <span class="dot"></span>
+              {{ isTableOpen ? seatsLeft + ' seats left today' : 'Closed now' }}
+            </div>
+          </div>
+        </div>
+
+        <!-- الفورم -->
+        <div class="col-lg-7">
+          <div class="form-panel">
+
+            <p class="status" [class.open]="isTableOpen">
+              {{ isTableOpen ? 'We are open' : 'Closed now' }}
+            </p>
+
+            <form #bookingForm="ngForm" *ngIf="!booked">
+
+              <div class="field">
+                <label>Your name</label>
+                <input type="text" name="guestName" placeholder="Enter your name"
+                       [(ngModel)]="guestName" required>
+                <p class="welcome" *ngIf="guestName">Welcome, {{ guestName }}!</p>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="field">
+                    <label>Guests</label>
+                    <input type="number" name="guests" min="1" max="10"
+                           [(ngModel)]="guests" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="field">
+                    <label>Phone</label>
+                    <input #phoneInput type="tel" name="phone" placeholder="+20 ...">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="field">
+                    <label>Date</label>
+                    <input type="date" name="date" [(ngModel)]="date" required>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="field">
+                    <label>Time</label>
+                    <input type="time" name="time" [(ngModel)]="time" required>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn-confirm"
+                      [disabled]="bookingForm.invalid || !isTableOpen"
+                      [attr.title]="'Seats left: ' + seatsLeft"
+                      (click)="confirm(phoneInput.value)">
+                Confirm Booking
+              </button>
+
+              <button type="button" class="btn-toggle" (click)="toggleOpen()">
+                Toggle open / closed
+              </button>
+
+            </form>
+
+            <div *ngIf="booked" class="success">
+              <div class="check">✓</div>
+              <h4 class="brand-font">Booking confirmed</h4>
+              <p>
+                Thank you, <strong>{{ guestName }}</strong>.<br>
+                Table for {{ guests }} on {{ date }} at {{ time }}.
+              </p>
+              <button class="btn-confirm" (click)="reset()">New booking</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

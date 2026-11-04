@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg savoria-nav sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand brand-font" routerLink="/">
+      Savoria
+      <small>GOOD FOOD · GOOD MOOD</small>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto gap-lg-4">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/menu" routerLinkActive="active">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/team" routerLinkActive="active">Chefs</a>
+        </li>
+      </ul>
+
+<a class="btn btn-book" routerLink="/booking">Book a Table</a>
+    </div>
+
+  </div>
+</nav>
